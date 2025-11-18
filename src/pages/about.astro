@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const frontmatter = {
+  title: "Satvi's Personal Portfolio",
+  author: "Satvi"
+};
+---
+
+<BaseLayout frontmatter={frontmatter}>
+  <section>
+    <h2><u>About Me</u></h2>
+    <section class="page-info">
+      <h3><em>At a Glance</em></h3>
+      <section class="content-row">
+        <p>
+          Hi! I'm <strong>Satvi Kammula</strong>, an incoming 4th-year Computer Science student at <strong>UC San Diego</strong>.
+          My journey at UCSD has been an exciting mix of learning, research, and building projects that push me to think creatively and critically.
+        </p>
+      </section>
+    </section>
+
+    <section class="page-info">
+      <h3><em>What I'm Passionate About</em></h3>
+      <section class="content-row">
+        <p>
+          I'm deeply interested in <strong>artificial intelligence and machine learning</strong>, especially their applications in <strong>healthcare</strong>.
+        </p>
+      </section>
+    </section>
+
+    <section class="page-info">
+      <h3><em>Beyond Tech</em></h3>
+      <section class="content-row">
+        <p>
+          Outside of computer science, I enjoy <strong>crafting</strong> and <strong>photography</strong>.
+        </p>
+      </section>
+    </section>
+  </section>
+</BaseLayout>

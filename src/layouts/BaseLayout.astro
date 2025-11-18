@@ -1,0 +1,28 @@
+---
+// Layout: BaseLayout.astro
+
+const { frontmatter } = Astro.props;
+import Navigation from "../components/navigation.astro";  // Navigation Component
+import Footer from "../components/footer.astro";  // Footer Component
+// import "../styles/global.css"; // Global CSS (you can create this file later)
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content={frontmatter?.author || "Your Name"} />
+    <link rel="icon" href="/images/favicon.png" />
+    <title>{frontmatter?.title || "Untitled Page"}</title>
+  </head>
+  <body>
+    <Navigation />
+    <main>
+      <h1>{frontmatter?.title}</h1>  <!-- Use optional chaining to avoid errors -->
+      <p>Written by {frontmatter?.author || "Unknown Author"}</p>  <!-- Fallback to "Unknown Author" -->
+      <slot />  <!-- Content will be injected here -->
+    </main>
+    <Footer />
+  </body>
+</html>

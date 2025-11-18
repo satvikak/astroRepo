@@ -1,0 +1,10 @@
+---
+// BlogPost.astro
+const { title, date, content, author } = Astro.props;
+---
+
+<article>
+  <h3>{title}</h3>
+  <p><strong>{author}</strong> | {date}</p>
+  <div>{content}</div>
+</article>

@@ -1,0 +1,30 @@
+---
+// Page: craftBlog.astro
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../components/blog.astro";
+
+// Use import.meta.glob() to fetch all markdown posts from the posts folder.
+const posts = import.meta.glob('../posts/*.md', { eager: true });
+
+// Extract the frontmatter from each post
+const postList = Object.values(posts).map(post => post.frontmatter);
+---
+
+<BaseLayout frontmatter={{ title: "Craft Blog", author: "Satvi Kammula" }}>
+  <h2>Craft Blog</h2>
+  <section>
+    <ol>
+      {postList.map((post) => (
+        <li>
+          <BlogPost
+            title={post.title}
+            date={post.date}
+            author={post.author}
+            content={post.content}
+          />
+        </li>
+      ))}
+    </ol>
+  </section>
+</BaseLayout>
